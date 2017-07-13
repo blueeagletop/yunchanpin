@@ -16,6 +16,10 @@ Route::get('/', function () {
     return view('index');
     // return HomeNav::all(); //使用了HomeNav就要先引用"use"
 });
-Route::get('/welcome/', function () {
-    return view('welcome');
+
+Route::get('/login', 'View\MemberController@toLogin');
+
+Route::get('/register', function () {
+    return view('register');
 });
+
