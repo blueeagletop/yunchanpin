@@ -10,9 +10,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+// use App\ORM\HomeNav;
 
 Route::get('/', function () {
     return view('index');
+    // return HomeNav::all(); //使用了HomeNav就要先引用"use"
 });
 Route::get('/welcome/', function () {
     return view('welcome');

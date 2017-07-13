@@ -5,7 +5,7 @@
 <title>云产品——顶级的云服务提供商</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="public/templatemo_style.css" rel="stylesheet" type="text/css" />
+<link href="public/css/templatemo_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="templatemo_header_wrapper">
