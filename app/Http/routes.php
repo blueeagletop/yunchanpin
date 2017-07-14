@@ -17,9 +17,8 @@ Route::get('/', function () {
     // return HomeNav::all(); //使用了HomeNav就要先引用"use"
 });
 
-Route::get('/login', 'View\MemberController@toLogin');
-
-Route::get('/register', function () {
-    return view('register');
-});
-
+/****** 用户操作 ******/
+Route::get('/login', 'View\UserController@Login');
+Route::get('/register','View\UserController@Register');
+Route::any('service/validate_code/create','Service\ValidateController@create');
+Route::any('service/register','Service\UserController@register');

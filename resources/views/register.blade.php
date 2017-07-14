@@ -27,25 +27,25 @@
 <div class="weui_cells weui_cells_form">
   <div class="weui_cell">
       <div class="weui_cell_hd"><label class="weui_label">邮箱</label></div>
-      <div class="weui_cell_bd weui_cell_primary">
+      <div class="weui_cell_bd">
           <input class="weui_input" type="text" placeholder="" name='email'/>
       </div>
   </div>
   <div class="weui_cell">
       <div class="weui_cell_hd"><label class="weui_label">密码</label></div>
-      <div class="weui_cell_bd weui_cell_primary">
+      <div class="weui_cell_bd">
           <input class="weui_input" type="password" placeholder="不少于6位" name='passwd_email'>
       </div>
   </div>
   <div class="weui_cell">
       <div class="weui_cell_hd"><label class="weui_label">确认密码</label></div>
-      <div class="weui_cell_bd weui_cell_primary">
+      <div class="weui_cell_bd">
           <input class="weui_input" type="password" placeholder="不少于6位" name='passwd_email_cfm'/>
       </div>
   </div>
-  <div class="weui_cell weui_vcode">
+  <div class="weui_cell">
       <div class="weui_cell_hd"><label class="weui_label">验证码</label></div>
-      <div class="weui_cell_bd weui_cell_primary">
+      <div class="weui_cell_bd">
           <input class="weui_input" type="text" placeholder="请输入验证码" name='validate_code'/>
       </div>
       <div class="weui_cell_ft">
@@ -55,9 +55,9 @@
 </div>
 <div class="weui_cells_tips"></div>
 <div class="weui_btn_area">
-  <a class="weui_btn weui_btn_primary" href="javascript:" onclick="onRegisterClick();">注册</a>
+  <a class="weui_btn" href="javascript:" onclick="onRegisterClick();">注册</a>
 </div>
-<a href="/login" class="bk_bottom_tips bk_important">已有帐号? 去登录</a>
+<a href="/login" class="bk_bottom_tips">已有帐号? 去登录</a>
 </body>
 
 <script type="text/javascript">
@@ -65,10 +65,8 @@
     $('input:radio[name=register_type]').each(function(index, el) {
       if($(this).attr('checked') == 'checked') {
         var email = '';
-        var phone = '';
         var password = '';
         var confirm = '';
-        var phone_code = '';
         var validate_code = '';
         var id = $(this).attr('id');
         if(id == 'x12') {
@@ -80,7 +78,6 @@
             return;
           }
         }
-
         $.ajax({
           type: "POST",
           url: '/service/register',
