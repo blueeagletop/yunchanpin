@@ -1,0 +1,26 @@
+.form{
+    position: absolute;
+    left: 220px;
+}
+.form samp{
+    display:inline-block;
+    height:52px;
+    line-height:30px;
+    font-size: large;
+}
+.form img{
+    position: absolute;
+    left: 100px;
+}
+.form button{
+    position: absolute;
+    width: 150px;
+    bottom: 10px;
+}
+.input{
+    position: absolute;
+    line-height: 30px;
+    width: 250px;
+    height: 30px;
+    left: 100px;
+}

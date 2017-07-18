@@ -9,10 +9,10 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
-    public function Login(){
+    public function login(){
         return view('login');
     }
-    public function Register(){
+    public function register(){
         return view('register');
     }
 }

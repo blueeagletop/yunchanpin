@@ -18,7 +18,25 @@ Route::get('/', function () {
 });
 
 /****** 用户操作 ******/
-Route::get('/login', 'View\UserController@Login');
-Route::get('/register','View\UserController@Register');
-Route::any('service/validate_code/create','Service\ValidateController@create');
-Route::any('service/register','Service\UserController@register');
+Route::get('/login', 'View\UserController@login');
+Route::get('/register','View\UserController@register');
+Route::get('service/validate_code/create','Service\ValidateController@create');
+
+Route::post('service/register','Service\UserController@doRegister');
+
+
+
+Route::group(['prefix'=>'admin'],function(){
+    Route::get('index','Admin\IndexController@index');
+    Route::get('welcome','Admin\IndexController@welcome');
+    Route::get('login','Admin\IndexController@login');
+    
+    /****** 首页管理 ******/
+    Route::get('homeNav','Admin\HomeController@homeNav');
+    Route::get('homeContent','Admin\HomeController@homeContent');
+    
+    /****** 逻辑操作 ******/
+    Route::group(['prefix'=>'service'],function(){
+        Route::post('login','Admin\IndexController@doLogin');
+    });
+});
