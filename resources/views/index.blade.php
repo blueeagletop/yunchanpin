@@ -6,18 +6,30 @@
 
 @section('content')
 
+<div id="templatemo_header_wrapper">
+<!-- Free Web Templates from TemplateMo.com -->
+    <div id="templatemo_header">
+    	<div id="logo"></div>
+        <div id="templatemo_menu">
+            <ul>
+                @foreach($homeNav as $nav)
+                <li><a href="{{$nav->url}}" 
+                       class="current"
+                       ><span></span>{{$nav->title}}</a></li>
+                @endforeach
+            </ul>   
+            <div class="cleaner"></div> 	
+        </div> <!-- end of menu -->
+        <div class="cleaner"></div>
+    </div> <!-- end of header -->
+</div> <!-- end of header wrapper -->
+
 <div id="templatemo_banner_wrapper">
 	<div id="templatemo_banner">
         <div id="banner_content">
-            <div id="banner_title">什么是“云产品”及其优势</div>
+            <div id="banner_title">{{ $homeContent->summary_title }}</div>
             <div id="banner_text">
-            	<p>
-            	&nbsp;&nbsp;&nbsp;&nbsp;“云产品”广泛意义上指的是放在远程服务器的程序作品，像网站、手机APP、云计算等都可以被称之为“云产品”。
-            	</p>
-            	<p>&nbsp;</p>
-            	<p>
-				&nbsp;&nbsp;&nbsp;&nbsp;“云产品”相比传统的制造业而言，优势在于“云”的特性，你不需要有专门和固定的办公地点，也可以拥有“云产品”。
-            	</p>
+                {{ $homeContent->summary_content }}
             </div>
           <div class="cleaner"></div>
         </div> <!-- end of banner content -->
@@ -27,21 +39,10 @@
 
 <div id="templatemo_content_top_wrapper">
     <div id="templatemo_content_top">
-        <div class="header_01">欢迎访问“云产品”</div>
-        <p>
-		&nbsp;&nbsp;&nbsp;&nbsp;
-		我们立志成为顶级的“云产品”服务商，为众多企业提供优质的“云服务”。我们的目标是为客户提供一个可视化且易于操作的平台，客户无需关心底层的代码实现，使客户可专注于业务上，而不是被代码所困扰。
-        </p>
-        <p>
-		&nbsp;&nbsp;&nbsp;&nbsp;
-		“云服务”的市场鱼龙混杂，一些劣质的服务商，在建设过程中，往往会收取协议外的费用，建设完成后，又不能提供匹配的售后服务，续费价格等同建站价格等。
-		</p>
-		<p>
-		&nbsp;&nbsp;&nbsp;&nbsp;
-		在这里，我们郑重承诺：1.所有费用均在建设前说明，未说明导致的额外费用均由我们承担，客户无需为我们的疏忽埋单。2.我们为所有的产品提供一年免费的代码维护以及终生售后服务。3.网站续费仅需成本价，无需再支付建站费用。
-        </p>
+        <div class="header_01">{{ $homeContent->welcome_title }}</div>
+{{ $homeContent->welcome_content }}
       <div class="margin_bottom_10"></div>
-        <div class="rc_btn_01"><a href="#">查看详情</a></div>
+        <div class="rc_btn_01"><a href="#">{{ $homeContent->welcome_button }}</a></div>
       <div class="cleaner"></div>
     </div> <!-- end of content top -->
 </div> <!-- end of content top wrapper -->
@@ -49,19 +50,19 @@
 <div id="templatemo_content_wrapper">
     <div id="templatemo_content">
         <div class="content_col_w420 fl">
-            <div class="header_02">我们的服务</div>
+            <div class="header_02">{{ $homeContent->service_title }}</div>
             <div class="service_box fl margin_right_10">
-           		<a href="#"><img src="public/images/templatemo_service_1.jpg" alt="service" /></a>
+           		<a href="#"><img src="http://localhost/yunchanpin/htdocs/{{$homeContent->service_image1}}" alt="service" /></a>
             </div>     
             <div class="service_box fl margin_right_10">
-            	<a href="#"><img src="public/images/templatemo_service_2.jpg" alt="service" /></a>
+            	<a href="#"><img src="http://localhost/yunchanpin/htdocs/{{$homeContent->service_image2}}" alt="service" /></a>
             </div> 
             <div class="service_box fl">
-	            <a href="#"><img src="public/images/templatemo_service_3.jpg" alt="service" /></a>
+	            <a href="#"><img src="http://localhost/yunchanpin/htdocs/{{$homeContent->service_image3}}" alt="service" /></a>
             </div>
             <div class="margin_bottom_10 border_bottom"></div>
             <div class="margin_bottom_30"></div>
-            <div class="header_02">新闻和公告</div>
+            <div class="header_02">{{$homeContent->new_title}}</div>
             <div class="testimonial_box_wrapper">
                 <div class="testimonial_box">
                     <div class="header_03"><a href="#">七月大促销</a></div>
@@ -89,27 +90,33 @@
         	<div class="margin_bottom_20"></div>
         </div>        <!-- end of a section -->
         <div class="content_col_w420 fr">
-            <div class="header_02">我们的淘宝商店</div>
+            <div class="header_02">{{$homeContent->shop_title}}</div>
             <div class="image_wrapper_01"><img src="public/images/templatemo_image_01.jpg" alt="image" /></div>
             <div class="section_w280 fl">
                 <ul class="future_project">
-                    <li>淘宝店：<a href="#">“云产品”工作室</a></li>
-                    <li>“云产品”工作室，专注云服务的顶级工作室</li>
+                    <li>{{$homeContent->shop_title2}}</li>
+                    <li>{{$homeContent->shop_content}}</li>
                 </ul>
                 <div class="cleaner"></div>
             </div>
             <div class="section_w140 fr">
-                <div class="rc_btn_02"><a href="#">访问</a></div>
+                <div class="rc_btn_02"><a href="#">{{$homeContent->shop_button}}</a></div>
                 <div class="cleaner"></div>            
             </div>
             <div class="margin_bottom_20 border_bottom"></div>
             <div class="margin_bottom_30"></div>
-            <div class="header_02">其他项目</div>
+            <div class="header_02">{{$homeContent->other_title}}</div>
             <div class="section_w280 fl">
                 <ul class="other_project_list">
-                    <li><a href="#">商业合作</a></li>
-                    <li><a href="#">投诉建议</a></li>
-                    <li><a href="#">加入我们</a></li>                    
+                    <li><a href="#">{{$homeContent->other_title1}}</a></li>
+                    <li><a href="#">{{$homeContent->other_title2}}</a></li>
+                    <li><a href="#">{{$homeContent->other_title3}}</a></li>
+                    @if($homeContent->other_title4 != null)
+                    <li><a href="#">{{$homeContent->other_title4}}</a></li>
+                    @elseif($homeContent->other_title5 != null)
+                    <li><a href="#">{{$homeContent->other_title5}}</a></li> 
+                    @else
+                    @endif
               </ul>
             </div>
             <div class="section_w140 fr">
@@ -122,6 +129,5 @@
 @endsection
 
 @section('my-js')
-
 
 @endsection

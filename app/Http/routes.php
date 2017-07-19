@@ -12,10 +12,7 @@
 */
 // use App\ORM\HomeNav;
 
-Route::get('/', function () {
-    return view('index');
-    // return HomeNav::all(); //使用了HomeNav就要先引用"use"
-});
+Route::get('/', 'View\IndexController@index');
 
 /****** 用户操作 ******/
 Route::get('/login', 'View\UserController@login');
@@ -32,7 +29,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('login','Admin\IndexController@login');
     
     /****** 首页管理 ******/
-    Route::get('homeNav','Admin\HomeController@homeNav');
+    Route::get('homeNav','Admin\HomeNavController@index');
     Route::get('homeContent','Admin\HomeController@homeContent');
     
     /****** 逻辑操作 ******/

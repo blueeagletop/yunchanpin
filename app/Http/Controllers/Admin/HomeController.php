@@ -9,9 +9,6 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    public function homeNav(){
-        return view('admin.homeNav');
-    }
     public function homeContent(){
         return '首页内容';
     }

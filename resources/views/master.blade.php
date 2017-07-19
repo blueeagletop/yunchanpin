@@ -11,23 +11,7 @@
 </head>
 <body>
 
-<div id="templatemo_header_wrapper">
-<!-- Free Web Templates from TemplateMo.com -->
-    <div id="templatemo_header">
-    	<div id="logo"></div>
-        <div id="templatemo_menu">
-            <ul>
-                <li><a href="index.html" class="current"><span></span>首页</a></li>
-                <li><a href="index.html"><span></span>云服务</a></li>
-                <li><a href="index.html"><span></span>项目</a></li>
-                <li><a href="index.html"><span></span>关于我们</a></li>
-                <li><a href="index.html"><span></span>联系我们</a></li>
-            </ul>   
-            <div class="cleaner"></div> 	
-        </div> <!-- end of menu -->
-        <div class="cleaner"></div>
-    </div> <!-- end of header -->
-</div> <!-- end of header wrapper -->
+
     
 <div class="page">
   @yield('content')
