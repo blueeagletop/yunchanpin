@@ -16,6 +16,8 @@ class HomeNavController extends Controller
         $homeNav = HomeNav::all();
         return view('admin.homeNav')->with('homeNav',$homeNav);
     }
-
+    public function viewAdd(){
+        return view('admin.homeNavAdd');
+    }
     
 }

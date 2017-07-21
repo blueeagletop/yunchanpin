@@ -3,7 +3,7 @@
 @section('title','云产品——管理员登录')
 
 @section('content')
-<link href="../public/admin/static/h-ui.admin/css/H-ui.login.css" rel="stylesheet" type="text/css" />
+  <link href="../public/admin/css/H-ui.login.css" rel="stylesheet" type="text/css" />
 
 <input type="hidden" id="TenantId" name="TenantId" value="" />
 <div class=""></div>
@@ -45,7 +45,49 @@
   </div>
 </div>
 <div class="footer">Copyright 你的公司名称 by H-ui.admin v3.1</div>
-<script type="text/javascript" src="../public/admin/lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="../public/admin/static/h-ui/js/H-ui.min.js"></script>
 
+@endsection
+
+@section('my-js')
+<script type="text/javascript">
+
+  function onLogin() {
+
+    var username = $('input[name=username]').val();
+    var password = $('input[name=password]').val();
+
+    $.ajax({
+        type: 'post', // 提交方式 get/post
+        url: 'service/login', // 需要提交的 url
+        dataType: 'json',
+        data: {
+          username: username,
+          password: password,
+          _token: "{{csrf_token()}}"
+        },
+        success: function(data) {
+          if(data == null) {
+            layer.msg('服务端错误', {icon:2, time:2000});
+            return;
+          }
+          if(data.status != 0) {
+            layer.msg(data.message, {icon:2, time:2000});
+            return;
+          }
+
+          location.href = 'index';
+        },
+        error: function(xhr, status, error) {
+          console.log(xhr);
+          console.log(status);
+          console.log(error);
+          layer.msg('ajax error', {icon:2, time:2000});
+        },
+        beforeSend: function(xhr){
+          layer.load(0, {shade: false});
+        }
+    });
+  }
+
+</script>
 @endsection

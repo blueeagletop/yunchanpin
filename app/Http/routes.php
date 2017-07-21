@@ -30,10 +30,14 @@ Route::group(['prefix'=>'admin'],function(){
     
     /****** 首页管理 ******/
     Route::get('homeNav','Admin\HomeNavController@index');
+    Route::get('homeNavAdd','Admin\HomeNavController@viewAdd');
     Route::get('homeContent','Admin\HomeController@homeContent');
+    
     
     /****** 逻辑操作 ******/
     Route::group(['prefix'=>'service'],function(){
+        Route::post('login','Admin\IndexController@doLogin');
+        Route::post('addHomeNav','Admin\HomeController@addHomeNav');
         Route::post('login','Admin\IndexController@doLogin');
     });
 });
