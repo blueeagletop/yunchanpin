@@ -14,7 +14,7 @@
             <ul>
                 @foreach($homeNav as $nav)
                 <li><a href="{{$nav->url}}" 
-                       @if($nav->id == 1)
+                       @if($nav->id == 2)
                        class="current"
                        @else
                        @endif

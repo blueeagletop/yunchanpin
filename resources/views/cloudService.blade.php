@@ -26,8 +26,6 @@
         <div class="cleaner"></div>
     </div> <!-- end of header -->
 </div> <!-- end of header wrapper -->
-
-
       
 @endsection
 

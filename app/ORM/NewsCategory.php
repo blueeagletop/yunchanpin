@@ -4,9 +4,9 @@ namespace App\ORM;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class NewsCategory extends Model
 {
-    protected $table = 'category';
+    protected $table = 'news_category';
     protected $primaryKey = 'id';
     public $timestamps = false;
 }

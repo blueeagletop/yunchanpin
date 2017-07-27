@@ -32,7 +32,7 @@
         <div id="banner_content">
             <div id="banner_title">{{ $homeContent->summary_title }}</div>
             <div id="banner_text">
-                {{ $homeContent->summary_content }}
+                {!! $homeContent->summary_content !!}
             </div>
           <div class="cleaner"></div>
         </div> <!-- end of banner content -->
@@ -43,7 +43,7 @@
 <div id="templatemo_content_top_wrapper">
     <div id="templatemo_content_top">
         <div class="header_01">{{ $homeContent->welcome_title }}</div>
-{{ $homeContent->welcome_content }}
+            {!! $homeContent->welcome_content !!}
       <div class="margin_bottom_10"></div>
         <div class="rc_btn_01"><a href="#">{{ $homeContent->welcome_button }}</a></div>
       <div class="cleaner"></div>
@@ -55,17 +55,17 @@
         <div class="content_col_w420 fl">
             <div class="header_02">{{ $homeContent->service_title }}</div>
             <div class="service_box fl margin_right_10">
-           		<a href="#"><img src="http://localhost/yunchanpin/htdocs/{{$homeContent->service_image1}}" alt="service" /></a>
+           		<a href="#"><img src="http://localhost/yunchanpin/htdocs/public/images/templatemo_service_1.jpg" alt="service" /></a>
             </div>     
             <div class="service_box fl margin_right_10">
-            	<a href="#"><img src="http://localhost/yunchanpin/htdocs/{{$homeContent->service_image2}}" alt="service" /></a>
+            	<a href="#"><img src="http://localhost/yunchanpin/htdocs/public/images/templatemo_service_2.jpg" alt="service" /></a>
             </div> 
             <div class="service_box fl">
-	            <a href="#"><img src="http://localhost/yunchanpin/htdocs/{{$homeContent->service_image3}}" alt="service" /></a>
+	            <a href="#"><img src="http://localhost/yunchanpin/htdocs/public/images/templatemo_service_3.jpg" alt="service" /></a>
             </div>
             <div class="margin_bottom_10 border_bottom"></div>
             <div class="margin_bottom_30"></div>
-            <div class="header_02">{{$homeContent->new_title}}</div>
+            <div class="header_02">{{$homeContent->news_title}}</div>
             <div class="testimonial_box_wrapper">
                 <div class="testimonial_box">
                     <div class="header_03"><a href="#">七月大促销</a></div>
@@ -103,23 +103,17 @@
                 <div class="cleaner"></div>
             </div>
             <div class="section_w140 fr">
-                <div class="rc_btn_02"><a href="#">{{$homeContent->shop_button}}</a></div>
+                <div class="rc_btn_02"><a href="{{$homeContent->shop_url}}" target="_black">{{$homeContent->shop_button}}</a></div>
                 <div class="cleaner"></div>            
             </div>
             <div class="margin_bottom_20 border_bottom"></div>
             <div class="margin_bottom_30"></div>
-            <div class="header_02">{{$homeContent->other_title}}</div>
+            <div class="header_02">其他项目</div>
             <div class="section_w280 fl">
                 <ul class="other_project_list">
-                    <li><a href="#">{{$homeContent->other_title1}}</a></li>
-                    <li><a href="#">{{$homeContent->other_title2}}</a></li>
-                    <li><a href="#">{{$homeContent->other_title3}}</a></li>
-                    @if($homeContent->other_title4 != null)
-                    <li><a href="#">{{$homeContent->other_title4}}</a></li>
-                    @elseif($homeContent->other_title5 != null)
-                    <li><a href="#">{{$homeContent->other_title5}}</a></li> 
-                    @else
-                    @endif
+                    <li><a href="#">商业合作</a></li>
+                    <li><a href="#">留言和建议</a></li>
+                    <li><a href="#">加入我们</a></li>
               </ul>
             </div>
             <div class="section_w140 fr">

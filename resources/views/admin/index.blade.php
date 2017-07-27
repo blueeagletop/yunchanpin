@@ -25,10 +25,8 @@
             <dt><i class="Hui-iconfont">&#xe616;</i> 资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a _href="article-list.html" data-title="资讯管理" href="javascript:void(0)">新增新闻</a></li>
-                    <li><a _href="article-list.html" data-title="资讯管理" href="javascript:void(0)">新增公告</a></li>
-                    <li><a _href="article-list.html" data-title="资讯管理" href="javascript:void(0)">新闻列表</a></li>
-                    <li><a _href="article-list.html" data-title="资讯管理" href="javascript:void(0)">公告列表</a></li>
+                    <li><a _href="news" data-title="资讯管理" href="javascript:void(0)">新闻列表</a></li>
+                    <li><a _href="affiche" data-title="公告管理" href="javascript:void(0)">公告列表</a></li>
                 </ul>
             </dd>
         </dl>
@@ -36,9 +34,7 @@
             <dt><i class="Hui-iconfont">&#xe620;</i> 产品管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a _href="product-brand.html" data-title="品牌管理" href="javascript:void(0)">新增产品</a></li>
-                    <li><a _href="product-category.html" data-title="分类管理" href="javascript:void(0)">产品分类</a></li>
-                    <li><a _href="product-list.html" data-title="产品管理" href="javascript:void(0)">产品列表</a></li>
+                    <li><a _href="webTemplet" data-title="品牌管理" href="javascript:void(0)">网站模板</a></li>
                 </ul>
             </dd>
         </dl>
@@ -46,9 +42,8 @@
             <dt><i class="Hui-iconfont">&#xe6b6;</i> 订单管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a _href="product-brand.html" data-title="品牌管理" href="javascript:void(0)">新增订单</a></li>
-                    <li><a _href="product-category.html" data-title="分类管理" href="javascript:void(0)">订单分类</a></li>
-                    <li><a _href="product-list.html" data-title="产品管理" href="javascript:void(0)">订单列表</a></li>
+                    <li><a _href="orderCategory" data-title="分类管理" href="javascript:void(0)">订单分类</a></li>
+                    <li><a _href="order" data-title="产品管理" href="javascript:void(0)">订单列表</a></li>
                 </ul>
             </dd>
         </dl>
@@ -56,9 +51,9 @@
             <dt><i class="Hui-iconfont">&#xe669;</i> 售后管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a _href="product-brand.html" data-title="品牌管理" href="javascript:void(0)">未处理信息</a></li>
-                    <li><a _href="product-category.html" data-title="分类管理" href="javascript:void(0)">已处理信息</a></li>
-                    <li><a _href="product-list.html" data-title="产品管理" href="javascript:void(0)">被删的信息</a></li>
+                    <li><a _href="untreatedApply" data-title="品牌管理" href="javascript:void(0)">未处理的售后申请</a></li>
+                    <li><a _href="finishApply" data-title="分类管理" href="javascript:void(0)">已处理的售后申请</a></li>
+                    <li><a _href="cutOutApply" data-title="被删除的信息" href="javascript:void(0)">被删除的售后申请</a></li>
                 </ul>
             </dd>
         </dl>
@@ -66,9 +61,9 @@
             <dt><i class="Hui-iconfont">&#xe622;</i> 留言管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a _href="http://h-ui.duoshuo.com/admin/" data-title="评论列表" href="javascript:;">未处理的留言</a></li>
-                    <li><a _href="http://h-ui.duoshuo.com/admin/" data-title="评论列表" href="javascript:;">全部留言</a></li>
-                    <li><a _href="feedback-list.html" data-title="意见反馈" href="javascript:void(0)">被删的留言</a></li>
+                    <li><a _href="untreatedAdvise" data-title="评论列表" href="javascript:;">未处理的留言建议</a></li>
+                    <li><a _href="finishAdvise" data-title="评论列表" href="javascript:;">已处理的留言建议</a></li>
+                    <li><a _href="cutOutAdvise" data-title="意见反馈" href="javascript:void(0)">被删除的留言建议</a></li>
                 </ul>
             </dd>
         </dl>
@@ -76,9 +71,8 @@
             <dt><i class="Hui-iconfont">&#xe60d;</i> 用户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a _href="member-list.html" data-title="会员列表" href="javascript:;">新增用户</a></li>
-                    <li><a _href="member-del.html" data-title="删除的会员" href="javascript:;">用户列表</a></li>
-                    <li><a _href="member-scoreoperation.html" data-title="积分管理" href="javascript:;">被删的用户</a></li>
+                    <li><a _href="user" data-title="删除的会员" href="javascript:;">用户列表</a></li>
+<!--                    <li><a _href="banUser" data-title="积分管理" href="javascript:;">被禁用的用户</a></li>-->
                 </ul>
             </dd>
         </dl>
@@ -86,8 +80,7 @@
             <dt><i class="Hui-iconfont">&#xe62d;</i> 管理员<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a _href="admin-role.html" data-title="角色管理" href="javascript:void(0)">新增管理员</a></li>
-                    <li><a _href="admin-list.html" data-title="管理员列表" href="javascript:void(0)">管理员列表</a></li>
+                    <li><a _href="admin" data-title="管理员列表" href="javascript:void(0)">管理员列表</a></li>
                 </ul>
             </dd>
         </dl>
