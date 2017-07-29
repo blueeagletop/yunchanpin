@@ -6,7 +6,7 @@
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 管理员后台 <span class="c-gray en">&gt;</span> 首页管理 <span class="c-gray en">&gt;</span> 头部导航栏 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i>刷新</a></nav>
 <div class="pd-30">
     <div class="cl pd-5 bg-1 bk-gray"> <span class="l">
-            <a href="javascript:;" onclick="addWebTemplet('添加资讯', 'addWebTemplet', '800', '500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加资讯</a> </span> 
+            <a href="javascript:;" onclick="addWebTemplet('添加网站模板', 'addWebTemplet', '800', '500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加网站模板</a> </span> 
             <span class="r">共有数据：<strong>{{count($webTemplets)}}</strong> 条</span> 
     </div>
     <table class="table table-border table-bordered table-bg">
@@ -42,7 +42,7 @@
                 <td>{{$web->created_at}}</td>
                 <td>{{$web->updated_at}}</td>
                 <td class="td-manage">
-                    <a title="编辑" href="javascript:;" onclick="webTemplet_edit('管理员编辑', 'editWebTemplet={{$web->id}}', '1', '800', '500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i>编辑</a><br>
+                    <a title="编辑" href="javascript:;" onclick="webTemplet_edit('网站模板编辑', 'editWebTemplet={{$web->id}}', '1', '800', '500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i>编辑</a><br>
                     <a title="删除" href="javascript:;" onclick='webTemplet_del("{{$web->name}}","{{$web->id}}")' class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i>删除</a></td>
             </tr>
             @endforeach

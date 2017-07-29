@@ -22,7 +22,13 @@ Route::get('service/validate_code/create','Service\ValidateController@create');
 Route::post('service/register','Service\UserController@doRegister');
 
 
-/****************** 后台相关 ******************/
+/****************** 用户后台 ******************/
+Route::group(['prefix'=>'user'],function(){
+    Route::get('index','User\IndexController@index');
+    Route::get('welcome','User\IndexController@welcome');
+});
+
+/****************** 管理员后台 ******************/
 Route::group(['prefix'=>'admin'],function(){
     Route::get('index','Admin\IndexController@index');
     Route::get('welcome','Admin\IndexController@welcome');

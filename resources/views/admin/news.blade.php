@@ -4,10 +4,23 @@
 
 @section('content')
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 管理员后台 <span class="c-gray en">&gt;</span> 首页管理 <span class="c-gray en">&gt;</span> 头部导航栏 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i>刷新</a></nav>
+
+<input type="text" class="input-text Wdate" id="d122" onclick="WdatePicker()" value="" style="width:120px;"/>
+
 <div class="pd-30">
     <div class="cl pd-5 bg-1 bk-gray"> <span class="l">
-            <a href="javascript:;" onclick="addNews('添加资讯', 'addNews', '800', '500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加资讯</a> </span> 
-            <span class="r">共有数据：<strong>{{count($news)}}</strong> 条</span> 
+
+            <div class="text-c"> 日期范围：
+                <input type="text" onfocus="WdatePicker({maxDate: '#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}'})" id="datemin" class="input-text Wdate" style="width:120px;">
+                -
+                <input type="text" onfocus="WdatePicker({minDate: '#F{$dp.$D(\'datemin\')}', maxDate: '%y-%M-%d'})" id="datemax" class="input-text Wdate" style="width:120px;">
+                <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱" id="" name="">
+                <button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 按标题搜索</button>
+            </div>
+            <br>
+
+            <a href="javascript:;" onclick="addNews('添加新闻', 'addNews', '800', '500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加新闻</a> </span> 
+        <span class="r">共有数据：<strong>{{count($news)}}</strong> 条</span> 
     </div>
     <table class="table table-border table-bordered table-bg">
         <thead>
@@ -39,11 +52,11 @@
                 <td class="td-status"><span class="label label-success radius">{{$ne->top}}</span></td>
                 <td>{{$ne->comment}}</td>
                 <td>
-<!--                    待完善功能，目前不可使用草稿功能-->
+                    <!--                    待完善功能，目前不可使用草稿功能-->
                     @if($ne->status == 0)
-                        草稿
+                    草稿
                     @else
-                        已发布
+                    已发布
                     @endif
                 </td>
                 <td>{{$ne->created_at}}</td>
@@ -51,7 +64,7 @@
                 <td class="td-manage">
                     <a title="详情" href="javascript:;" onclick="news_detail('资讯详情', 'newsDetail={{$ne->id}}', '1', '800', '500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe695;</i>详情</a><br>
                     <a title="编辑" href="javascript:;" onclick="news_edit('管理员编辑', 'editNews={{$ne->id}}', '1', '800', '500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i>编辑</a><br>
-                    <a title="删除" href="javascript:;" onclick='news_del("{{$ne->title}}","{{$ne->id}}")' class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i>删除</a></td>
+                    <a title="删除" href="javascript:;" onclick='news_del("{{$ne->title}}", "{{$ne->id}}")' class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i>删除</a></td>
             </tr>
             @endforeach
         </tbody>
@@ -61,6 +74,9 @@
 @endsection
 
 @section('my-js')
+
+<script type="text/javascript" src="../public/admin/lib/My97DatePicker/WdatePicker.js"></script> 
+
 <script type="text/javascript">
     function addNews(title, url) {
         var index = layer.open({
@@ -70,7 +86,7 @@
         });
         layer.full(index);
     }
-    
+
     function news_detail(title, url) {
         var index = layer.open({
             type: 2,
@@ -79,7 +95,7 @@
         });
         layer.full(index);
     }
-    
+
     function news_edit(title, url) {
         var index = layer.open({
             type: 2,
@@ -88,7 +104,7 @@
         });
         layer.full(index);
     }
-    
+
     function news_del(name, id) {
         layer.confirm('确认要删除【' + name + '】吗？', function (index) {
             //此处请求后台程序，下方是成功后的前台处理……

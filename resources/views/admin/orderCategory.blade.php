@@ -6,7 +6,7 @@
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 管理员后台 <span class="c-gray en">&gt;</span> 首页管理 <span class="c-gray en">&gt;</span> 头部导航栏 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i>刷新</a></nav>
 <div class="pd-30">
     <div class="cl pd-5 bg-1 bk-gray"> <span class="l">
-            <a href="javascript:;" onclick="addOrderCategory('添加资讯', 'addOrderCategory', '800', '500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加资讯</a> </span> 
+            <a href="javascript:;" onclick="addOrderCategory('添加订单分类', 'addOrderCategory', '800', '500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加订单分类</a> </span> 
         <span class="r">共有数据：<strong>{{count($categories)}}</strong> 条</span> 
     </div>
     <table class="table table-border table-bordered table-bg">
@@ -34,7 +34,7 @@
                     @endif
                 </td>
                 <td class="td-manage">
-                    <a title="编辑" href="javascript:;" onclick="orderCategory_edit('管理员编辑', 'editOrderCategory={{$cate->id}}', '1', '800', '500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i>编辑</a><br>
+                    <a title="编辑" href="javascript:;" onclick="orderCategory_edit('订单分类编辑', 'editOrderCategory={{$cate->id}}', '1', '800', '500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i>编辑</a><br>
                     <a title="删除" href="javascript:;" onclick='webTemplet_del("{{$cate->name}}", "{{$cate->id}}")' class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i>删除</a></td>
             </tr>
             @endforeach
